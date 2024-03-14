@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bottom-bar">
+        <button id="add-book-btn">Add New Book</button>
+    </div>
+
+    <div class="page-container">
+        
+            <div class="card-container">
+        
+            </div>
+            
+        
+            <dialog id="add-book-dialog" >
+                <form id="add-book-form">
+                    <div id="add-book-container">
+                    <label for="title">Title:</label>
+                    <input id="title" name="title" type="text" required>
+        
+                    <label for="author">Author:</label>
+                    <input id="author" name="author" type="text" required>
+        
+                    <label for="pages">Pages:</label>
+                    <input id="pages" name="pages" type="number" required>
+        
+                    <label for="read-or-unread">Read:</label>
+                    <select id="read-or-unread" name="read-or-unread">
+                       <option value="read">Read</option>
+                       <option value="unread">Unread</option>
+                    </select>
+        
+                    <button id="modal-confirm-btn">
+                        Confirm
+                    </button>
+                    </div>
+                </form>
+            </dialog>
+
+            
+            <script src="script.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #F0F7EE;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-container {
+    margin: 40px 20px 20px 20px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr, 30px;
+}
+
+.card-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 200px));
+}
+
+.bottom-bar {
+    position: sticky;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+}
+
+#add-book-btn {
+    width: 200px;
+    height: 40px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    bottom: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+#add-book-dialog {
+    position: absolute;
+    top: 30vh;
+    border: 0.5px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 1px 2px #91A8A4 ;
+    width: 200px;
+    
+}
+
+#add-book-container {
+    display: grid;
+}
+
+#add-book-form input {
+    height: 20px;
+    border-radius: 4px;
+    border: 0.5px solid black;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+#add-book-form select {
+    height: 30px;
+    border-radius: 4px;
+    background-color: #F0F7EE ;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+#modal-confirm-btn {
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: #CFE8EF;
+    border-radius: 8px;
+    border: 1px solid #F0F7EE;
+    height: 30px;
+}
+
+.book-card {
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #CFE8EF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-card p{
+    margin: 0 0 8px 0;
+}
+
+.book-card button {
+    margin-top: 1rem;
+}
+
+.card-btns button {
+    margin: 20px 10px 0 10px;
+    font-size: 1rem;
+    background-color: #CFE8EF;
+    border-radius: 8px;
+    border: 1px solid #F0F7EE;
+    height: 30px;
+    width: 120px;
+}
+
+.hidden {
+    display: none
+}
