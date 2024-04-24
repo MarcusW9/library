@@ -21,16 +21,19 @@
             
         
             <dialog id="add-book-dialog" >
-                <form id="add-book-form">
+                <form id="add-book-form" novalidate>
                     <div id="add-book-container">
                     <label for="title">Title:</label>
                     <input id="title" name="title" type="text" required>
-        
+                    <span class="error" aria-live="polite"></span>
+
                     <label for="author">Author:</label>
                     <input id="author" name="author" type="text" required>
-        
+                    <span class="error" aria-live="polite"></span>
+
                     <label for="pages">Pages:</label>
-                    <input id="pages" name="pages" type="number" required>
+                    <input id="pages" name="pages" type="text" pattern="[\d]+" required>
+                    <span class="error" aria-live="polite"></span>
         
                     <label for="read-or-unread">Read:</label>
                     <select id="read-or-unread" name="read-or-unread">

@@ -4,10 +4,89 @@ const addBookDialog = document.querySelector("#add-book-dialog")
 const modalConfirmBtn = document.querySelector("#modal-confirm-btn")
 
 // form inputs
+const form = document.querySelector("#add-book-form")
 const inputTitle = document.querySelector("#title")
 const inputAuthor = document.querySelector("#author")
 const inputPages =  document.querySelector("#pages")
 const inputRead =  document.querySelector("#read-or-unread")
+
+// form validation
+const pagesError = document.querySelector("#pages + span.error")
+inputPages.addEventListener("input", (e) => {
+    if (inputPages.validity.valid) {
+        pagesError.textContent = "";
+        pagesError.className = "error";
+    } else {
+        showPagesError()
+    }
+})
+
+function showPagesError() {
+    if (inputPages.validity.valueMissing) {
+        pagesError.textContent = "Please enter the number of pages"
+    } else if (inputPages.validity.patternMismatch) {
+        pagesError.textContent = "Please enter a valid number"
+    }
+    pagesError.className = "error active"
+}
+
+const titleError = document.querySelector("#title + span.error")
+inputTitle.addEventListener("input", (e) => {
+    if (inputTitle.validity.valid) {
+        titleError.textContent = ""
+        titleError.className = "error";
+    } else {
+        showTitleError()
+    }
+})
+
+function showTitleError() {
+    if (inputTitle.validity.valueMissing) {
+        titleError.textContent = "Please enter a title"
+    } 
+    titleError.className = "error active"
+}
+
+const authorError = document.querySelector("#author + span.error")
+inputAuthor.addEventListener("input", (e) => {
+    if (inputAuthor.validity.valid) {
+        authorError.textContent = ""
+        authorError.className = "error";
+    } else {
+        showAuthorError()
+    }
+})
+
+function showAuthorError() {
+    if (inputAuthor.validity.valueMissing) {
+        authorError.textContent = "Please enter an author"
+    } 
+    authorError.className = "error active"
+}
+
+function showErrors() {
+    if (!inputTitle.validity.valid) {
+        showTitleError()
+    } 
+    if (!inputAuthor.validity.valid) {
+        showAuthorError()
+    }
+    if (!inputPages.validity.valid) {
+        showPagesError()
+    }
+}
+
+form.addEventListener("submit", (e) => {
+    if (!inputTitle.validity.valid ||
+        !inputAuthor.validity.valid ||
+        !inputPages.validity.valid
+    ) {
+        showErrors();
+        console.log("test")
+        e.preventDefault();
+    }
+} )
+
 
 // create library class 
 class Library {
@@ -102,7 +181,7 @@ const submitBook = () => {
 }
 
 modalConfirmBtn.addEventListener("click", (e) => {
-    e.preventDefault(); 
+    // e.preventDefault(); 
     if (inputTitle.value != "" && 
     inputAuthor.value != "" &&
     inputPages.value != "") {
@@ -114,3 +193,4 @@ modalConfirmBtn.addEventListener("click", (e) => {
 library.addBook(theHobbit)
 library.addBook(theHobbit2)
 library.displayLibrary(library.books)
+

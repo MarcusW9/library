@@ -72,11 +72,15 @@ h1 {
     display: grid;
 }
 
+#add-book-form label {
+    margin-top: 8px;
+}
+
 #add-book-form input {
     height: 30px;
     border-radius: 4px;
     border: 0.5px solid black;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     margin-top: 4px;
 }
 
@@ -144,4 +148,22 @@ h1 {
 
 button {
     color: var(--accent-color)
+}
+
+/* ERRORS */
+
+.error {
+    width: 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+}
+
+.error.active { 
+    padding: 0.3em;
 }
